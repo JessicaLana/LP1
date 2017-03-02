@@ -4,6 +4,10 @@
 #include <ctime>
 #include <map>
 using namespace std;
+/*
+	Vinicius Misael Mendes de Moura
+	Jessica Lana Ricardo da Silva Braga
+*/
 void q1(){
 	int tmp, maior;
 	cout << "Continue entrando com numeros inteiros (0 para parar) " << endl;
