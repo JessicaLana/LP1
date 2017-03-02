@@ -1,2 +1,1 @@
-# LP1
-Listas LP1
+Grupo: Vinicius Misael Mendes de Moura, Jessica Lana Ricardo da Silva Braga
