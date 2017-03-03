@@ -34,8 +34,10 @@ void q2(){
 			cout << "Numero grande demais" << endl;
 		else if(tmp < random)
 			cout << "Numero pequeno demais" << endl;
-		else 
+		else {
 			cout << "Parabens, voce adivinhou o numero" << endl;
+			break;
+		}
 	}
 }
 
@@ -75,7 +77,7 @@ void q4(){
 	}
 
 	cout << "Resultado da votaçao" << endl;
-	cout<< "Foram computados " << total << "votos." << endl;
+	cout<< "Foram computados " << total << " votos." << endl;
 	cout << "Jogador\tVotos\t%" << endl;
 	for(auto e : camisas){
 		cout << e.first << "\t" << e.second << "\t" << e.second/(float)total*100 << "%" << endl;
