@@ -8,10 +8,12 @@ using namespace std;
 	Vinicius Misael Mendes de Moura
 	Jessica Lana Ricardo da Silva Braga
 */
-void q1(){
+int q1(){
 	int tmp, maior;
 	cout << "Continue entrando com numeros inteiros (0 para parar) " << endl;
 	cin >> maior;
+	if(maior == 0)
+		return 1;
 	while(cin >> tmp){
 		if(tmp == 0) 
 			break;
@@ -19,6 +21,7 @@ void q1(){
 			maior = tmp;
 	}
 	cout << "O maior numero entrado foi " << maior << endl;
+	return 1;
 }
 
 void q2(){
@@ -83,18 +86,28 @@ int main(){
 	int opcao;
 	cout << "Entre com a questao a ser resolvida" << endl;
 	cin >> opcao;
-	switch(opcao){
-		case 1:
-			q1();
-			break;
-		case 2:
-			q2();
-			break;
-		case 3:
-			q3();
-			break;
-		case 4:
-			q4();
-			break;
+	while(true){
+		switch(opcao){
+			case 1:
+				q1();
+				cout << "\nEntre com a questao a ser resolvida" << endl;
+				cin >> opcao;
+				break;
+			case 2:
+				q2();
+				cout << "\nEntre com a questao a ser resolvida" << endl;
+				cin >> opcao;
+				break;
+			case 3:
+				q3();
+				cout << "\nEntre com a questao a ser resolvida" << endl;
+				cin >> opcao;
+				break;
+			case 4:
+				q4();
+				cout << "\nEntre com a questao a ser resolvida" << endl;
+				cin >> opcao;
+				break;
+		}
 	}
 }
