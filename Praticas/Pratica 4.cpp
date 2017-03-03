@@ -52,7 +52,7 @@ void q3(){
 		sides[tmp]++;
 	}
 	for(int i = 0; i < 6; i++){
-		cout << "Face " << i << ": " << sides[i]/(float)100*100 << "%" << endl;
+		cout << "Face " << i << ": " << (sides[i]/n)*100.0 << endl;
 	}
 }
 
