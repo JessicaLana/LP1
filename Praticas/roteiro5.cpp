@@ -2,27 +2,26 @@
 #include <string>
 #include <vector>
 using namespace std;
-/////////////////////////////////////////////////////////////////////////
+//////////////////////////////////////////////////////////////////////// Questao 1
 class Data{
 	int dia, mes, ano;
 	public:
-	Data(){}
-	Data(int dia_, int mes_, int ano_) : dia(dia_), mes(mes_), ano(ano_){ 
-		if(dia > 31 || dia < 0)
-			cout << "Erro, dia invalido" << endl;
-		if(mes > 12 || mes < 1)
-			cout << "Erro, mes invalido" << endl;
-		if(ano < 0)
-			cout << "Erro, ano invalido" << endl;
-	}
 	void setDia(int  n) {
-		dia = n;
+		if(n > 31 || n < 0) 
+			cout << "Erro, dia invalido" << endl;
+		else
+			dia = n;
 	}
 	void setMes(int n){
-		mes = n;
+		if(n > 12 || n < 1)
+			cout << "Erro, mes invalido" << endl;
+		else mes = n;
 	}
 	void setAno(int n){
-		ano = n;
+		if(ano < 0)
+			cout << "Erro, ano invalido" << endl;
+		else 
+			ano = n;
 	}
 	int getDia(){
 		return dia;
@@ -32,6 +31,12 @@ class Data{
 	}
 	int getAno(){
 		return ano;
+	}
+	Data(){	}
+	Data(int dia_, int mes_, int ano_) : dia(dia_), mes(mes_), ano(ano_){ 
+		setDia(dia_);
+		setMes(mes_);
+		setAno(ano_);
 	}
 	void avancarDia(){
 		if(dia == 31){
@@ -48,7 +53,6 @@ class Data{
 		else dia++;
 	}
 };
-/////////////////////////////////////////////////////////////////////////q
 class DataTest{
 	public:
 	void main();
@@ -61,7 +65,8 @@ void DataTest::main(){
 	foo.avancarDia();
 	cout << foo.getDia() << '\\' << foo.getMes() << '\\' << foo.getAno() << endl;
 }
-/////////////////////////////////////////////////////////////////////////
+///////////////////////////////////////////////////////////////////////// Questao 2
+/*
 class Invoice{
 	int numero, quantidade;
 	double preco;
@@ -111,7 +116,7 @@ void InvoiceTest::main(){
 		cout << "Preco: " << foo.getPreco() << "\nQuantidade: " << foo.getQuantidade() << "\nDescricao: " <<  foo.getDescricao() << "\nNumero: " << foo.getNumero() << endl;
 		cout << "\nFatura: " << foo.getInvoiceAmount() << endl; 
 }
-/////////////////////////////////////////////////////////////////////////
+*//*///////////////////////////////////////////////////////////////////////  Questao 3l
 class Empregado{
 	string nome, sobrenome;
 	double salario;
@@ -158,7 +163,9 @@ void EmpregadoTest::main(){
 	cout << endl << "Salario anual de " << vinicius.getNome() << " : " << vinicius.getSalario()*12 << endl;
 	cout << "Salario anual de " << jessica.getNome() << " : " << jessica.getSalario()*12 << endl;
 }
-/////////////////////////////////////////////////////////////////////////
+*/
+/////////////////////////////////////////////////////////////////////////  Questao 4
+/*
 class Pessoa{
 	string nome;
 	string telefone;
@@ -166,7 +173,7 @@ class Pessoa{
 	public:
 	Pessoa(){};
 	Pessoa(string nome_) : nome(nome_){}
-	Pessoa(string nome_, int idade_, string telefone_) : nome(nome_), idade(idade_), telefone(telefone_){}
+	Pessoa(string nome_, int idade_, string  telefone_) : nome(nome_), idade(idade_), telefone(telefone_){}
 	void setNome(string s){
 		nome = s;
 	}
@@ -199,7 +206,9 @@ void CadastroDePessoa::main(){
 	vinicius.setTelefone("91623455");
 	cout << vinicius.getNome() << endl << vinicius.getIdade() << endl << vinicius.getTelefone() << endl;
 }
-/////////////////////////////////////////////////////////////////////////
+*/
+///////////////////////////////////////////////////////////////////////// Questao 5
+/*
 class Despesas{
 	double valor;
 	string tipoDeGasto;
@@ -241,11 +250,64 @@ class ProgramaPricipalQ5{
 		ControleDeGastos meusGastos;
 		vector<Despesas> vetor = {despesa1, despesa2};
 		meusGastos.setDespesas(vetor);
+		cout << "Despesas totais: " << meusGastos.calculaTotalDespesas() << endl;
 	}
 };
-
-int main(){
-
+*/
+///////////////////////////////////////////////////////////////////////// Questao 6
+/*
+class Pagamento{
+	double salario;
+	string nomeDoFuncionario;
+	public:
+	Pagamento(double salario_, string nome) : salario(salario_), nomeDoFuncionario(nome) {}
+	void setSalario(double n){
+		salario = n;
+	}
+	void setNome(string s){
+		nomeDoFuncionario = s;
+	}
+	double getSalario(){
+		return salario;
+	}
+	string getNome(){
+		return nomeDoFuncionario;
+	}
+};
+class ControleDePagamentos{
+	vector<Pagamento> pagamentos;
+	public:
+	void setPagamentos(vector<Pagamento> pagamentos_){
+		pagamentos = pagamentos_;
+	}
+	double calculaTotalPagamentos();
+	bool existePagamentoParaFuncionario (string nomeFuncionario);
+};
+double ControleDePagamentos::calculaTotalPagamentos( ){
+	double sum = 0;
+	for(auto e : pagamentos) sum+= e.getSalario();
+	return sum;
 }
-
-
+bool ControleDePagamentos::existePagamentoParaFuncionario (string nomeFuncionario){
+	bool flag = 0;
+	for(auto e : pagamentos){
+		if(e.getNome() ==nomeFuncionario) flag = 1;
+	}
+	return flag;
+}
+class ProgramaPrincipalQ5{
+	public:
+	int main();
+};
+int ProgramaPrincipalQ5::main(){
+	ControleDePagamentos controle;
+	Pagamento pagamento1(520, "VInicius");
+	Pagamento pagamento2(1000, "Jessica");
+	controle.setPagamentos({pagamento1, pagamento2});
+	cout << "Total de pagamentos: R$" << controle.calculaTotalPagamentos() << endl;
+}
+*/
+/////////////////////////////////////////////////////////////////////////
+int main(){
+	
+}
