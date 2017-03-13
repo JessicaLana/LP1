@@ -59,14 +59,14 @@ class DataTest{
 };
 void DataTest::main(){
 	Data foo;
-	foo.setDia(13);
+	foo.setDia(31);
 	foo.setMes(10);
 	foo.setAno(1998);
 	foo.avancarDia();
 	cout << foo.getDia() << '\\' << foo.getMes() << '\\' << foo.getAno() << endl;
 }
 ///////////////////////////////////////////////////////////////////////// Questao 2
-/*
+
 class Invoice{
 	int numero, quantidade;
 	double preco;
@@ -113,10 +113,10 @@ void InvoiceTest::main(){
 		foo.setQuantidade(10);
 		foo.setDescricao("Bateria");
 		foo.setPreco(5.25);
-		cout << "Preco: " << foo.getPreco() << "\nQuantidade: " << foo.getQuantidade() << "\nDescricao: " <<  foo.getDescricao() << "\nNumero: " << foo.getNumero() << endl;
-		cout << "\nFatura: " << foo.getInvoiceAmount() << endl; 
+		cout << "Preco: " << foo.getPreco() << "\n\tQuantidade: " << foo.getQuantidade() << "\n\tDescricao: " <<  foo.getDescricao() << "\n\tNumero: " << foo.getNumero() << endl;
+		cout << "\tFatura: " << foo.getInvoiceAmount() << endl; 
 }
-*//*///////////////////////////////////////////////////////////////////////  Questao 3l
+///////////////////////////////////////////////////////////////////////  Questao 3l
 class Empregado{
 	string nome, sobrenome;
 	double salario;
@@ -156,16 +156,15 @@ void EmpregadoTest::main(){
 	jessica.setNome("Jessica");
 	jessica.setSobrenome("Lana");
 	jessica.setSalario(1000);
-	cout << "Salario anual de " << vinicius.getNome() << " : " << vinicius.getSalario()*12 << endl;
-	cout << "Salario anual de " << jessica.getNome() << " : " << jessica.getSalario()*12 << endl;
+	cout << "\tSalario anual de " << vinicius.getNome() << " : " << vinicius.getSalario()*12 << endl;
+	cout << "\tSalario anual de " << jessica.getNome() << " : " << jessica.getSalario()*12 << endl;
 	jessica.setSalario(jessica.getSalario()*1.1);
-	cout << "Apos aumento:" << endl; 
-	cout << endl << "Salario anual de " << vinicius.getNome() << " : " << vinicius.getSalario()*12 << endl;
-	cout << "Salario anual de " << jessica.getNome() << " : " << jessica.getSalario()*12 << endl;
+	cout << "\tApos aumento do salario de jessica:" << endl; 
+	cout << "\tSalario anual de " << vinicius.getNome() << " : " << vinicius.getSalario()*12 << endl;
+	cout << "\tSalario anual de " << jessica.getNome() << " : " << jessica.getSalario()*12 << endl;
 }
-*/
+
 /////////////////////////////////////////////////////////////////////////  Questao 4
-/*
 class Pessoa{
 	string nome;
 	string telefone;
@@ -204,11 +203,9 @@ void CadastroDePessoa::main(){
 	Pessoa vinicius("Vinicius", 18, "123456789");
 	Pessoa jessica("Jessica", 28, "123456789");
 	vinicius.setTelefone("91623455");
-	cout << vinicius.getNome() << endl << vinicius.getIdade() << endl << vinicius.getTelefone() << endl;
+	cout << "\tNome: " << vinicius.getNome() << endl << "\tIdade: " << vinicius.getIdade() << endl << "\tTelefone: " << vinicius.getTelefone() << endl;
 }
-*/
 ///////////////////////////////////////////////////////////////////////// Questao 5
-/*
 class Despesas{
 	double valor;
 	string tipoDeGasto;
@@ -250,12 +247,11 @@ class ProgramaPricipalQ5{
 		ControleDeGastos meusGastos;
 		vector<Despesas> vetor = {despesa1, despesa2};
 		meusGastos.setDespesas(vetor);
-		cout << "Despesas totais: " << meusGastos.calculaTotalDespesas() << endl;
+		cout << "\tDespesas totais: " << meusGastos.calculaTotalDespesas() << endl;
 	}
 };
-*/
 ///////////////////////////////////////////////////////////////////////// Questao 6
-/*
+
 class Pagamento{
 	double salario;
 	string nomeDoFuncionario;
@@ -295,19 +291,72 @@ bool ControleDePagamentos::existePagamentoParaFuncionario (string nomeFuncionari
 	}
 	return flag;
 }
-class ProgramaPrincipalQ5{
+class ProgramaPrincipalQ6{
 	public:
 	int main();
 };
-int ProgramaPrincipalQ5::main(){
+int ProgramaPrincipalQ6::main(){
 	ControleDePagamentos controle;
 	Pagamento pagamento1(520, "VInicius");
 	Pagamento pagamento2(1000, "Jessica");
 	controle.setPagamentos({pagamento1, pagamento2});
-	cout << "Total de pagamentos: R$" << controle.calculaTotalPagamentos() << endl;
+	cout << "\tTotal de pagamentos: R$" << controle.calculaTotalPagamentos() << endl;
 }
-*/
+
 /////////////////////////////////////////////////////////////////////////
 int main(){
-	
+	int opcao;
+	cout << "Entre com a questao a ser resolvida: ";
+	cin >> opcao;
+	while(true){
+		switch(opcao){
+			case 1:
+				DataTest bar;
+				cout << "Metodo main de uma instancia de DataTest criando objeto foo do tipo Data; dia, mes e ano setados para (31,10,1998), respectivamente; foo.avancarDia() chamado.\nEstado final de foo (data,mes,ano):\n\t" ;
+				bar.main();
+				cout << "\nEntre com a questao a ser resolvida: " ;
+				cin >> opcao;
+				break;
+			case 2:
+				InvoiceTest bar1;
+				cout << "Metodo main de um instancia de InvoiceTest criando objeto foo do tipo Invoice; Numero, quantidade, descriçao e preco setados para 123,10,\"Bateria\" e 5.25, respectivamente; imprimindo campos a partir dos gets:\n\t";
+				bar1.main();
+				cout << "\nEntre com a questao a ser resolvida: ";
+				cin >> opcao;
+				break;
+			case 3:
+				EmpregadoTest bar2;
+				cout << "Metodo main de uma instancia de EmpregadoTest criando dois objetos do tipo Empregado: vinicius(\"Vinicius\",\"Misael\", 500 ) e jessica(\"Jessica\", \"Lana\", 1000), com atributos inicializados a partir dos metodos set." << endl;
+				cout << "Imprimindo campos:" << endl;
+				bar2.main();
+				cout << "\nEntre com a questao a ser resolvida: ";
+				cin >> opcao;
+				break;
+			case 4:
+				CadastroDePessoa bar3;
+				cout << "Metodo main de uma instancia de CadastroDePessoa criando dois objetos: vinicius{\"Vinicius\", 18, \"123456789\"} e jessica{\"Jessica\", 28, \"123456789\"}; vinicius.setTelefone(\"91623455\") apos construcao de vinicius; campos de vinicius sendo impressos utilizando dos metodos get:" << endl;
+				bar3.main();
+				cout << "\nEntre com a questao a ser resolvida: ";
+				cin >> opcao;
+				break;
+			case 5:
+				ProgramaPricipalQ5 bar4;
+				cout << "Instanciadas duas Despesas: despesa1{100,\"Comida\"} e despesa2{100, \"Lazer\"}" << endl << "Criado objeto meusGastos do tipo ControleDeGastos; criado vetor<Despesas>{despesa1,despesa2} e passado como argumento para meusGastos.setDespesas(); imprimindo despesas: " << endl;
+				bar4.main();
+				cout << "\nEntre com a questao a ser resolvida: ";
+				cin >> opcao;
+				break;
+			case 6: 
+				ProgramaPrincipalQ6 bar5;
+				cout <<  "Instanciando ControleDePagamentos; dois objetos Pagamento sendo construidos: pagamento1(520, \"Vinicius\") e pagamento2(1000, \"Jessica\")" << endl << "Chamada ControleDePagamentos::setPagamentos com argumentos pagamento1 e pagamento2" << endl;
+				bar5.main();
+				cout << "\nEntre com a questao a ser resolvida: ";
+				cin >> opcao;
+				break;
+			default:
+				cout << "Erro, tente novamente: " ;
+				cin >> opcao;
+				break;
+		}
+	}
 }
