@@ -6,6 +6,7 @@ class MesaDeRestaurante{
 	std::vector<Pedido> pedidos;
 	public:
 	MesaDeRestaurante(){}
+	MesaDeRestaurante(std::vector<Pedido> p) : pedidos(p){}
 	void adicionaAoPedido(Pedido p);
 	void zeraPedidos();
 	double calculaTotal();

@@ -8,6 +8,6 @@ void MesaDeRestaurante::zeraPedidos(){
 
 double MesaDeRestaurante::calculaTotal(){
 	double sum = 0;
-	for(auto e : pedidos) sum += e.getPreco();
+	for(auto e : pedidos) sum += e.getPreco()*e.getQuantidade();
 	return sum;
 }
