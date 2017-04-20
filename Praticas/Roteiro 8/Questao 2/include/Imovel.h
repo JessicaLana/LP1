@@ -2,6 +2,8 @@
 #define IMOVEL
 #include <string>
 #include <iostream>
+#include <string>
+#include <sstream>
 #include "Endereco.h"
 class Imovel{
 	protected:
@@ -10,6 +12,6 @@ class Imovel{
 	Imovel(){}
 	Imovel(Endereco e) : endereco(e){}
 	Endereco getEndereco();
-	virtual void getDescricao() = 0;
+	virtual std::string getDescricao() = 0;
 };
 #endif

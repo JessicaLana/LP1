@@ -12,5 +12,5 @@ class Apartamento : public Imovel{
 	void setPos(std::string p);
 	void setValor(double n);
 	void setNumeroVagas(int n);
-	void getDescricao();
+	std::string getDescricao();
 };

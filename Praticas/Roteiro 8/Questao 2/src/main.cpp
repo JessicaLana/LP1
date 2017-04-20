@@ -10,7 +10,7 @@ int main(){
 	Apartamento apartamento1("Posicao1", 60500, 34, Endereco("Logradouro5", "Bairro5", "Cidade5", "Cep5", 60));
 	std::vector<Imovel*>  vetor = {&casa1, &casa2, &terreno1, &terreno2, &apartamento1};
 	for(auto e : vetor){
-		e->getDescricao();
+		std::cout<< e->getDescricao();
 		std::cout<<"--------------------------------------------------------------------" << std::endl;
 	}
 } 

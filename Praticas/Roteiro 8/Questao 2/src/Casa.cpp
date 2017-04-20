@@ -35,8 +35,9 @@ double Casa::getAreaTerreno(){
 double Casa::getAreaConstruida(){
 	return areaConstruida;
 }
-void Casa::getDescricao(){
-	std::cout << "Endereço:\n " <<
+std::string Casa::getDescricao(){
+	std::ostringstream streamDescricao;
+	streamDescricao << "Endereço:\n " <<
 	"\tLogradouro: " << endereco.getLogradouro() <<
 	std::endl << "\tBairro: " << endereco.getBairro() <<
 	std::endl << "\tCidade: " << endereco.getCidade() <<
@@ -45,6 +46,7 @@ void Casa::getDescricao(){
 	std::endl << "Quantidade de quartos: " << quantidadeDeQuartos <<
 	std::endl << "Area do terreno: " << areaDoTerreno <<
 	std::endl << "Area construida: " << areaConstruida << std::endl;
+	return streamDescricao.str();
 }
 Casa::Casa(Endereco e, int nP, int nQ, double aT, double aC) : Imovel(e){
 	setNumeroPavimentos(nP);

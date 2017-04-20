@@ -6,5 +6,5 @@ class Terreno : public Imovel{
 	Terreno(double n, Endereco e) : Imovel(e), area(n){}
 	void setArea(double n);
 	double getArea();
-	void getDescricao();
+	std::string getDescricao();
 };

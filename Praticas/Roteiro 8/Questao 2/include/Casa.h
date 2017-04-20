@@ -1,6 +1,7 @@
 #include "Imovel.h"
 #include "Endereco.h"
 #include <iostream>
+
 class Casa : public Imovel{
 	int numeroDePavimentos;
 	int quantidadeDeQuartos;
@@ -17,5 +18,5 @@ class Casa : public Imovel{
 	int getQuantidadeQuartos();
 	double getAreaTerreno();
 	double getAreaConstruida();
-	void getDescricao();
+	std::string getDescricao();
 };

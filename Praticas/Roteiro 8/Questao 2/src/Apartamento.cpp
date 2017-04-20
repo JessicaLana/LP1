@@ -22,8 +22,9 @@ Apartamento::Apartamento(std::string pos, double valor, int numero, Endereco e) 
 	setValor(valor);
 	setNumeroVagas(numero);
 }
-void Apartamento::getDescricao(){
-	std::cout << "Endereço:\n " <<
+std::string Apartamento::getDescricao(){
+	std::ostringstream streamDescricao;
+	streamDescricao << "Endereço:\n " <<
 	"\tLogradouro: " << endereco.getLogradouro() <<
 	std::endl << "\tBairro: " << endereco.getBairro() <<
 	std::endl << "\tCidade: " << endereco.getCidade() <<
@@ -31,4 +32,5 @@ void Apartamento::getDescricao(){
 	std::endl << "Posicao: " << getPos() << 
 	std::endl << "Valor do condomineo: " << getValor() <<
 	std::endl << "Numero de vagas na garagem: " << getNumeroVagas() << std::endl;
+	return streamDescricao.str();
 }
