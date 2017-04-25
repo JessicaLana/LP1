@@ -1,3 +1,5 @@
+#ifndef ASSALARIADO
+#define ASSALARIADO
 #include "Funcionario.h"
 class Assalariado : public Funcionario{
 	double salario;
@@ -13,3 +15,4 @@ class Assalariado : public Funcionario{
 		 "\nSalario: "  << assalariado.salario << std::endl;
 	}
 };
+#endif

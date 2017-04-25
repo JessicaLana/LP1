@@ -1,3 +1,5 @@
+#ifndef COMISSIONADO
+#define COMISSIONADO
 #include "Funcionario.h"
 class Comissionado : public Funcionario{
 	double vendasSemanais;
@@ -19,3 +21,4 @@ class Comissionado : public Funcionario{
 		 "\nPercentual da comissao: " << comissionado.percentualComissao << "%" << std::endl;
 	}
 };
+#endif

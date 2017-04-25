@@ -1,4 +1,7 @@
+#ifndef HORISTA
+#define HORISTA
 #include "Funcionario.h"
+#include <iostream>
 class Horista : public Funcionario{
 	double salarioPorHora;
 	double horasTrabalhadas;
@@ -17,3 +20,4 @@ class Horista : public Funcionario{
 		 "\nHoras trabalhadas: " << horista.horasTrabalhadas << std::endl;
 	}
 };
+#endif

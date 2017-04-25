@@ -10,5 +10,10 @@ class Funcionario{
 	Funcionario(){}
 	Funcionario(std::string nome_, int matricula_);
 	virtual double calculaSalario() = 0;
+	int getMatricula();
+	std::string getNome();
+	void setMatricula(int n);
+	void setNome(std::string nome);
+
 };
 #endif
