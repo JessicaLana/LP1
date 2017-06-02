@@ -1,0 +1,39 @@
+.TH "Desktop/Projeto_easy/src/main.cpp" 3 "Fri Jun 2 2017" "Controle" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+Desktop/Projeto_easy/src/main.cpp
+.SH SYNOPSIS
+.br
+.PP
+\fC#include '\&.\&./include/Detector\&.h'\fP
+.br
+\fC#include '\&.\&./include/Controle\&.h'\fP
+.br
+
+.SS "Functions"
+
+.in +1c
+.ti -1c
+.RI "int \fBmain\fP ()"
+.br
+.in -1c
+.SH "Function Documentation"
+.PP 
+.SS "int main ()"
+
+.PP
+Definition at line 3 of file main\&.cpp\&.
+.PP
+.nf
+3           {
+4     Controle d; 
+5     d\&.run();
+6     while(d\&.running()){
+7         std::cout << d\&.getCenter()\&.x << std::endl;
+8     }
+9 }
+.fi
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Controle from the source code\&.

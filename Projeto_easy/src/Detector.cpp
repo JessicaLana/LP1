@@ -16,14 +16,20 @@ cv::Point Detector::getCenter(){
 }
 void Detector::detect(cv::Mat& img, double scale){
     double t = 0;
+    //Img should never be empty
     assert(!img.empty());
     std::vector<cv::Rect> faces, faces2;
     cv::Mat gray, smallImg;
+
+    //Pre-processing img
     cv::cvtColor( img, gray, cv::COLOR_BGR2GRAY );
     double fx = 1 / scale;
     cv::resize( gray, smallImg, cv::Size(), fx, fx, cv::INTER_LINEAR );
     cv::equalizeHist( smallImg, smallImg );
+
+    //Calculating frame-rate
     t = (double)cv::getTickCount();
+    //Detect faces in img and store them in faces.
     classifier.detectMultiScale( smallImg, faces,
         1.1, 2, 0
         //|CASCADE_FIND_BIGGEST_OBJECT
@@ -32,8 +38,11 @@ void Detector::detect(cv::Mat& img, double scale){
         cv::Size(30, 30) );
 
     t = (double)cv::getTickCount() - t;
-   // printf( "detection time = %g ms\n", t*1000/cv::getTickFrequency());
+    //printf( "detection time = %g ms\n", t*1000/cv::getTickFrequency()); //Uncomment this line to print processing time each iteration
+    //If no faces are detected, just print current frame as it is.
     if(faces.size() == 0) imshow("result", img);
+    
+    //Figuring out face's center on the screen. 
     for ( size_t i = 0; i < faces.size(); i++ ){
         cv::Rect r = faces[i];
         cv::Mat smallImgROI;
@@ -51,6 +60,7 @@ void Detector::detect(cv::Mat& img, double scale){
             center = cvPoint(cvRound((r.x + r.width-1)*scale), cvRound((r.y + r.height-1)*scale));
         }
       //  std::cout << center.x << " " << center.y << std::endl;
+
         imshow("result", img);
     }
 }

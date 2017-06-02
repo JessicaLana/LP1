@@ -1,0 +1,217 @@
+.TH "Controle" 3 "Fri Jun 2 2017" "Controle" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+Controle
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <Controle\&.h>\fP
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBControle\fP ()"
+.br
+.ti -1c
+.RI "\fBControle\fP (std::string ipAddrs_, int n)"
+.br
+.ti -1c
+.RI "\fB~Controle\fP ()"
+.br
+.ti -1c
+.RI "void \fBload\fP (std::string path)"
+.br
+.ti -1c
+.RI "void \fBconnect\fP ()"
+.br
+.ti -1c
+.RI "void \fBgetSignal\fP ()"
+.br
+.ti -1c
+.RI "void \fBcaptureLoop\fP ()"
+.br
+.ti -1c
+.RI "void \fBrun\fP ()"
+.br
+.ti -1c
+.RI "bool \fBrunning\fP ()"
+.br
+.ti -1c
+.RI "cv::Point \fBgetCenter\fP ()"
+.br
+.in -1c
+.SS "Private Attributes"
+
+.in +1c
+.ti -1c
+.RI "\fBDetector\fP \fBd\fP"
+.br
+.ti -1c
+.RI "std::string \fBipAddrs\fP"
+.br
+.ti -1c
+.RI "std::thread \fBdetectorThread\fP"
+.br
+.ti -1c
+.RI "std::mutex \fBmutex\fP"
+.br
+.ti -1c
+.RI "cv::Point \fBcenter\fP"
+.br
+.ti -1c
+.RI "uint8_t \fBsignal\fP"
+.br
+.ti -1c
+.RI "int \fBvideoCaptureN\fP = 0"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+This class uses the state of a \fBDetector\fP to determine which signal shall be sent to the specified server\&. The processing loop runs concurrently with the connection loop 
+.PP
+Definition at line 8 of file Controle\&.h\&.
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "Controle::Controle ()\fC [inline]\fP"
+Default constructor 
+.PP
+Definition at line 17 of file Controle\&.h\&.
+.SS "Controle::Controle (std::string ipAddrs_, int n)\fC [inline]\fP"
+Constructor, simply initializes and ip address for server and the number of the capture device to be used 
+.PP
+Definition at line 18 of file Controle\&.h\&.
+.SS "Controle::~Controle ()"
+Default destructor 
+.PP
+Definition at line 39 of file Controle\&.cpp\&.
+.PP
+.nf
+39                    {
+40     //On destruction , joins detectorThread if it hasn't exited yet\&.
+41     if(detectorThread\&.joinable())
+42         detectorThread\&.join();
+43 }
+.fi
+.SH "Member Function Documentation"
+.PP 
+.SS "void Controle::captureLoop ()"
+Main capture loop, processes each frame with \fBDetector::detect\fP and updates center 
+.PP
+Definition at line 5 of file Controle\&.cpp\&.
+.PP
+.nf
+5                           {
+6     cv::VideoCapture capture(0);
+7     cv::Mat frame, image;
+8     double scale = 1;
+9     mutex\&.unlock();
+10     if(!capture\&.isOpened())
+11         std::cout << "Erro abrindo dispositivo de captura" << std::endl;
+12     else{
+13         while(1){
+14             //Locks mutex during frame processing - which should take about 30ms\&.
+15             mutex\&.lock();
+16             capture >> frame;
+17             if( frame\&.empty() )
+18                 throw std::runtime_error("Frame vazio, falha ao capturar frame com dispositivo de captura selecionado");
+19             cv::Mat frame1 = frame\&.clone();
+20             //Updating center state
+21             d\&.detect(frame1, scale);
+22             center = d\&.getCenter();
+23             //Press q || Q || ESC to exit\&.
+24             char c = (char)cv::waitKey(10);
+25             mutex\&.unlock();
+26             if( c == 27 || c == 'q' || c == 'Q' ){
+27                 std::exit(0);
+28             }
+29         } 
+30     }
+31 }
+.fi
+.SS "void Controle::connect ()\fC [inline]\fP"
+Connect to server with ip ipAddrs 
+.PP
+Definition at line 21 of file Controle\&.h\&.
+.SS "cv::Point Controle::getCenter ()"
+Returns the detected face's center as a cv::Point 
+.PP
+Definition at line 44 of file Controle\&.cpp\&.
+.PP
+.nf
+44                            {
+45     //This function is garanteed to wait for current frame processing loop to be done before returning detected face's center\&.
+46     std::lock_guard<std::mutex> guard{mutex};
+47     return center;
+48 }
+.fi
+.SS "void Controle::getSignal ()"
+Determines which signal shall be sent to server and returns it 
+.PP
+Definition at line 2 of file Controle\&.cpp\&.
+.PP
+.nf
+2                         {
+3     
+4 }
+.fi
+.SS "void Controle::load (std::string path)"
+Loads a different classifier (LBP or Haar-like) 
+.SS "void Controle::run ()"
+Spawns thread with captureLoop as task and passes its ownership to detectorThread 
+.PP
+Definition at line 33 of file Controle\&.cpp\&.
+.PP
+.nf
+33                   {
+34     //Mutex unlocking is only done once thread is spawned and videoCapture device is set up and ready to go lest other threads reference Controle's state while it's still initializing
+35     mutex\&.lock();
+36     detectorThread = std::move(std::thread([=]{captureLoop();}));
+37 }
+.fi
+.SS "bool Controle::running ()"
+Returns 1 if detectorThread is currently running; returns 0 otherwhise 
+.PP
+Definition at line 49 of file Controle\&.cpp\&.
+.PP
+.nf
+49                       {
+50     //Returns 1 if detectorThread hasn't exited yet\&.
+51     return detectorThread\&.joinable();
+52 }
+.fi
+.SH "Member Data Documentation"
+.PP 
+.SS "cv::Point Controle::center\fC [private]\fP"
+Detected face's center 
+.PP
+Definition at line 13 of file Controle\&.h\&.
+.SS "\fBDetector\fP Controle::d\fC [private]\fP"
+\fBDetector\fP to be used 
+.PP
+Definition at line 9 of file Controle\&.h\&.
+.SS "std::thread Controle::detectorThread\fC [private]\fP"
+Frame processing thread 
+.PP
+Definition at line 11 of file Controle\&.h\&.
+.SS "std::string Controle::ipAddrs\fC [private]\fP"
+Server addres 
+.PP
+Definition at line 10 of file Controle\&.h\&.
+.SS "std::mutex Controle::mutex\fC [private]\fP"
+Mutex for syncrhonization 
+.PP
+Definition at line 12 of file Controle\&.h\&.
+.SS "uint8_t Controle::signal\fC [private]\fP"
+Signal to be sent over network 
+.PP
+Definition at line 14 of file Controle\&.h\&.
+.SS "int Controle::videoCaptureN = 0\fC [private]\fP"
+Capture device to be used (defaults to installed webcam) 
+.PP
+Definition at line 15 of file Controle\&.h\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Controle from the source code\&.

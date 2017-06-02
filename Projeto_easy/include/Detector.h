@@ -5,16 +5,17 @@
 #include "opencv2/imgproc.hpp"
 #include <string>
 #include <iostream>
+/*! This class takes care of detecting faces in each frame and updating its state accordingly */
 class Detector{
     public:
-    std::string filePath = std::string("/usr/share/opencv/lbpcascades/lbpcascade_frontalface.xml");
-    cv::CascadeClassifier classifier;
-    cv::Point center;
+    std::string filePath = std::string("/usr/share/opencv/lbpcascades/lbpcascade_frontalface.xml"); /*!< Cascade classifier path */
+    cv::CascadeClassifier classifier;/*!< Cascade classifier to be used */
+    cv::Point center;/*!< Detected face's center */
     public:
-    Detector();
-    Detector(std::string path);
-    cv::Point getCenter();
-    void detect(cv::Mat& img, double scale);
+    Detector();/*!< Default constructor */
+    Detector(std::string path);/*!< Initializes cacade path */
+    cv::Point getCenter();/*!< Returns detected face's center */
+    void detect(cv::Mat& img, double scale);/*!< Processes a frame (img), scaling it (scale) */
 };
 
 
