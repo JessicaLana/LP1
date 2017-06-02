@@ -50,7 +50,7 @@ void Detector::detect(cv::Mat& img, double scale){
         else{
             center = cvPoint(cvRound((r.x + r.width-1)*scale), cvRound((r.y + r.height-1)*scale));
         }
-        std::cout << center.x << " " << center.y << std::endl;
+      //  std::cout << center.x << " " << center.y << std::endl;
         imshow("result", img);
     }
 }

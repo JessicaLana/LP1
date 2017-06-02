@@ -2,5 +2,8 @@
 #include "../include/Controle.h"
 int main(){
     Controle d; 
-    d.captureLoop();
+    d.run();
+    while(d.running()){
+        std::cout << d.getCenter().x << std::endl;
+    }
 }
