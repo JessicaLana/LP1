@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['videocapturen',['videoCaptureN',['../class_controle.html#ab7e433adf684b11c0e2079d046d429be',1,'Controle']]]
+  ['protocol',['protocol',['../class_socket.html#aa1a5128027f9af179b6e88a3eb6bb706',1,'Socket']]]
 ];

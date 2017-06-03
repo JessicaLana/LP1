@@ -5,5 +5,6 @@ var dir_a11f83ed21c6cfe72d71bfc5f7507620 =
     ] ],
     [ "Detector.h", "_detector_8h.html", [
       [ "Detector", "class_detector.html", "class_detector" ]
-    ] ]
+    ] ],
+    [ "Socket.h", "_socket_8h.html", "_socket_8h" ]
 ];

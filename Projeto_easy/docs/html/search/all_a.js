@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['_7econtrole',['~Controle',['../class_controle.html#a98f5d2630efbdb5f469cbb2675725b20',1,'Controle']]]
+  ['platform_5fid',['PLATFORM_ID',['../_c_make_c_compiler_id_8c.html#adbc5372f40838899018fadbc89bd588b',1,'PLATFORM_ID():&#160;CMakeCCompilerId.c'],['../_c_make_c_x_x_compiler_id_8cpp.html#adbc5372f40838899018fadbc89bd588b',1,'PLATFORM_ID():&#160;CMakeCXXCompilerId.cpp']]],
+  ['protocol',['protocol',['../class_socket.html#aa1a5128027f9af179b6e88a3eb6bb706',1,'Socket']]]
 ];

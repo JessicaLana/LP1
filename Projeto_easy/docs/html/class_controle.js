@@ -1,7 +1,7 @@
 var class_controle =
 [
     [ "Controle", "class_controle.html#abbe044aad705ef7d663c45275948fd12", null ],
-    [ "Controle", "class_controle.html#aa5ee1f77a864d9ef4b65821dff3ac4a6", null ],
+    [ "Controle", "class_controle.html#aa2dccd6f4592dc6169f5fa52416ba39a", null ],
     [ "~Controle", "class_controle.html#a98f5d2630efbdb5f469cbb2675725b20", null ],
     [ "captureLoop", "class_controle.html#a80556d08591e48956c2811d2c7664e37", null ],
     [ "connect", "class_controle.html#a4bede01b9018cab4780db162d1fa50dd", null ],
@@ -14,7 +14,9 @@ var class_controle =
     [ "d", "class_controle.html#ab95cc99c983b3299c9c04c2f175f67f2", null ],
     [ "detectorThread", "class_controle.html#a611b744619d9dc8624b79a99a2381d2c", null ],
     [ "ipAddrs", "class_controle.html#aa1781ef5f04efc0102422c579d3d2898", null ],
+    [ "mSignal", "class_controle.html#a5ebc3f013207b32acc0bb07f3c87f1a8", null ],
+    [ "mSocket", "class_controle.html#a20e5b915eef6a25960155e6e89d3439c", null ],
     [ "mutex", "class_controle.html#a90c9ad5fa7e7b92b81755c9c989bf57a", null ],
-    [ "signal", "class_controle.html#a5daba3ef07ea4b9d50dde367e176c4b7", null ],
+    [ "socketThread", "class_controle.html#aa25997befd2a372ca7f2256e13d720a1", null ],
     [ "videoCaptureN", "class_controle.html#ab7e433adf684b11c0e2079d046d429be", null ]
 ];

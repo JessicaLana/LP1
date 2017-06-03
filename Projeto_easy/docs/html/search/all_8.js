@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['signal',['signal',['../class_controle.html#a5daba3ef07ea4b9d50dde367e176c4b7',1,'Controle']]]
+  ['load',['load',['../class_controle.html#afcad63acbcdc8781893b214401ce457e',1,'Controle']]]
 ];
