@@ -17,6 +17,4 @@ class Detector{
     cv::Point getCenter();/*!< Returns detected face's center */
     void detect(cv::Mat& img, double scale);/*!< Processes a frame (img), scaling it (scale) */
 };
-
-
 #endif

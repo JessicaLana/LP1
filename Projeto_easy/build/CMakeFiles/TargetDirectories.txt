@@ -1,0 +1,3 @@
+/home/vinicius/Desktop/Projeto_easy/build/CMakeFiles/rebuild_cache.dir
+/home/vinicius/Desktop/Projeto_easy/build/CMakeFiles/edit_cache.dir
+/home/vinicius/Desktop/Projeto_easy/build/CMakeFiles/main.dir

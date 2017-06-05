@@ -43,24 +43,23 @@ void Detector::detect(cv::Mat& img, double scale){
     if(faces.size() == 0) imshow("result", img);
     
     //Figuring out face's center on the screen. 
-    for ( size_t i = 0; i < faces.size(); i++ ){
-        cv::Rect r = faces[i];
-        cv::Mat smallImgROI;
-        std::vector<cv::Rect> nestedObjects;
-        int radius;
+    
+    cv::Rect r = faces[0];
+    cv::Mat smallImgROI;
+    std::vector<cv::Rect> nestedObjects;
+    int radius;
 
-        double aspect_ratio = (double)r.width/r.height;
-        if( 0.75 < aspect_ratio && aspect_ratio < 1.3 ){
-            center.x = cvRound((r.x + r.width*0.5)*scale);
-            center.y = cvRound((r.y + r.height*0.5)*scale);
-            radius = cvRound((r.width + r.height)*0.25*scale);
-            cv::circle( img, center, radius, cv::Scalar(255,0,0), 3, 8, 0 );      
-        }
-        else{
-            center = cvPoint(cvRound((r.x + r.width-1)*scale), cvRound((r.y + r.height-1)*scale));
-        }
+    double aspect_ratio = (double)r.width/r.height;
+    if( 0.75 < aspect_ratio && aspect_ratio < 1.3 ){
+        center.x = cvRound((r.x + r.width*0.5)*scale);
+        center.y = cvRound((r.y + r.height*0.5)*scale);
+        radius = cvRound((r.width + r.height)*0.25*scale);
+        cv::circle( img, center, radius, cv::Scalar(255,0,0), 3, 8, 0 );      
+    }
+    else{
+        center = cvPoint(cvRound((r.x + r.width-1)*scale), cvRound((r.y + r.height-1)*scale));
+    }
       //  std::cout << center.x << " " << center.y << std::endl;
 
-        imshow("result", img);
-    }
+    imshow("result", img);
 }
