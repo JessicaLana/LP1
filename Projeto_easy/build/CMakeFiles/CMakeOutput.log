@@ -586,3 +586,199 @@ Linking C executable cmTC_a625c
 make[1]: Leaving directory '/home/vinicius/Desktop/Projeto_easy/build/CMakeFiles/CMakeTmp'
 
 
+Determining if the function XOpenDisplay exists in the /usr/lib/x86_64-linux-gnu/libX11.so;/usr/lib/x86_64-linux-gnu/libXext.so passed with the following output:
+Change Dir: /home/vinicius/Desktop/Projeto_easy/build/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/make" "cmTC_387ad/fast"
+/usr/bin/make -f CMakeFiles/cmTC_387ad.dir/build.make CMakeFiles/cmTC_387ad.dir/build
+make[1]: Entering directory '/home/vinicius/Desktop/Projeto_easy/build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_387ad.dir/CheckFunctionExists.c.o
+/usr/bin/cc    -DCHECK_FUNCTION_EXISTS=XOpenDisplay   -o CMakeFiles/cmTC_387ad.dir/CheckFunctionExists.c.o   -c /usr/share/cmake-3.7/Modules/CheckFunctionExists.c
+Linking C executable cmTC_387ad
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_387ad.dir/link.txt --verbose=1
+/usr/bin/cc   -DCHECK_FUNCTION_EXISTS=XOpenDisplay    CMakeFiles/cmTC_387ad.dir/CheckFunctionExists.c.o  -o cmTC_387ad -rdynamic /usr/lib/x86_64-linux-gnu/libX11.so /usr/lib/x86_64-linux-gnu/libXext.so 
+make[1]: Leaving directory '/home/vinicius/Desktop/Projeto_easy/build/CMakeFiles/CMakeTmp'
+
+
+Determining if the function gethostbyname exists passed with the following output:
+Change Dir: /home/vinicius/Desktop/Projeto_easy/build/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/make" "cmTC_3ea45/fast"
+/usr/bin/make -f CMakeFiles/cmTC_3ea45.dir/build.make CMakeFiles/cmTC_3ea45.dir/build
+make[1]: Entering directory '/home/vinicius/Desktop/Projeto_easy/build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_3ea45.dir/CheckFunctionExists.c.o
+/usr/bin/cc    -DCHECK_FUNCTION_EXISTS=gethostbyname   -o CMakeFiles/cmTC_3ea45.dir/CheckFunctionExists.c.o   -c /usr/share/cmake-3.7/Modules/CheckFunctionExists.c
+Linking C executable cmTC_3ea45
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_3ea45.dir/link.txt --verbose=1
+/usr/bin/cc   -DCHECK_FUNCTION_EXISTS=gethostbyname    CMakeFiles/cmTC_3ea45.dir/CheckFunctionExists.c.o  -o cmTC_3ea45 -rdynamic 
+make[1]: Leaving directory '/home/vinicius/Desktop/Projeto_easy/build/CMakeFiles/CMakeTmp'
+
+
+Determining if the function connect exists passed with the following output:
+Change Dir: /home/vinicius/Desktop/Projeto_easy/build/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/make" "cmTC_7ed6b/fast"
+/usr/bin/make -f CMakeFiles/cmTC_7ed6b.dir/build.make CMakeFiles/cmTC_7ed6b.dir/build
+make[1]: Entering directory '/home/vinicius/Desktop/Projeto_easy/build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_7ed6b.dir/CheckFunctionExists.c.o
+/usr/bin/cc    -DCHECK_FUNCTION_EXISTS=connect   -o CMakeFiles/cmTC_7ed6b.dir/CheckFunctionExists.c.o   -c /usr/share/cmake-3.7/Modules/CheckFunctionExists.c
+Linking C executable cmTC_7ed6b
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_7ed6b.dir/link.txt --verbose=1
+/usr/bin/cc   -DCHECK_FUNCTION_EXISTS=connect    CMakeFiles/cmTC_7ed6b.dir/CheckFunctionExists.c.o  -o cmTC_7ed6b -rdynamic 
+make[1]: Leaving directory '/home/vinicius/Desktop/Projeto_easy/build/CMakeFiles/CMakeTmp'
+
+
+Determining if the function remove exists passed with the following output:
+Change Dir: /home/vinicius/Desktop/Projeto_easy/build/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/make" "cmTC_3768e/fast"
+/usr/bin/make -f CMakeFiles/cmTC_3768e.dir/build.make CMakeFiles/cmTC_3768e.dir/build
+make[1]: Entering directory '/home/vinicius/Desktop/Projeto_easy/build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_3768e.dir/CheckFunctionExists.c.o
+/usr/bin/cc    -DCHECK_FUNCTION_EXISTS=remove   -o CMakeFiles/cmTC_3768e.dir/CheckFunctionExists.c.o   -c /usr/share/cmake-3.7/Modules/CheckFunctionExists.c
+Linking C executable cmTC_3768e
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_3768e.dir/link.txt --verbose=1
+/usr/bin/cc   -DCHECK_FUNCTION_EXISTS=remove    CMakeFiles/cmTC_3768e.dir/CheckFunctionExists.c.o  -o cmTC_3768e -rdynamic 
+make[1]: Leaving directory '/home/vinicius/Desktop/Projeto_easy/build/CMakeFiles/CMakeTmp'
+
+
+Determining if the function shmat exists passed with the following output:
+Change Dir: /home/vinicius/Desktop/Projeto_easy/build/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/make" "cmTC_5ac82/fast"
+/usr/bin/make -f CMakeFiles/cmTC_5ac82.dir/build.make CMakeFiles/cmTC_5ac82.dir/build
+make[1]: Entering directory '/home/vinicius/Desktop/Projeto_easy/build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_5ac82.dir/CheckFunctionExists.c.o
+/usr/bin/cc    -DCHECK_FUNCTION_EXISTS=shmat   -o CMakeFiles/cmTC_5ac82.dir/CheckFunctionExists.c.o   -c /usr/share/cmake-3.7/Modules/CheckFunctionExists.c
+Linking C executable cmTC_5ac82
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_5ac82.dir/link.txt --verbose=1
+/usr/bin/cc   -DCHECK_FUNCTION_EXISTS=shmat    CMakeFiles/cmTC_5ac82.dir/CheckFunctionExists.c.o  -o cmTC_5ac82 -rdynamic 
+make[1]: Leaving directory '/home/vinicius/Desktop/Projeto_easy/build/CMakeFiles/CMakeTmp'
+
+
+Determining if the function IceConnectionNumber exists in the ICE passed with the following output:
+Change Dir: /home/vinicius/Desktop/Projeto_easy/build/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/make" "cmTC_f775b/fast"
+/usr/bin/make -f CMakeFiles/cmTC_f775b.dir/build.make CMakeFiles/cmTC_f775b.dir/build
+make[1]: Entering directory '/home/vinicius/Desktop/Projeto_easy/build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_f775b.dir/CheckFunctionExists.c.o
+/usr/bin/cc    -DCHECK_FUNCTION_EXISTS=IceConnectionNumber   -o CMakeFiles/cmTC_f775b.dir/CheckFunctionExists.c.o   -c /usr/share/cmake-3.7/Modules/CheckFunctionExists.c
+Linking C executable cmTC_f775b
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_f775b.dir/link.txt --verbose=1
+/usr/bin/cc   -DCHECK_FUNCTION_EXISTS=IceConnectionNumber    CMakeFiles/cmTC_f775b.dir/CheckFunctionExists.c.o  -o cmTC_f775b -rdynamic -lICE 
+make[1]: Leaving directory '/home/vinicius/Desktop/Projeto_easy/build/CMakeFiles/CMakeTmp'
+
+
+Determining if the function png_create_read_struct exists passed with the following output:
+Change Dir: /home/vinicius/Desktop/Projeto_easy/build/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/make" "cmTC_46625/fast"
+/usr/bin/make -f CMakeFiles/cmTC_46625.dir/build.make CMakeFiles/cmTC_46625.dir/build
+make[1]: Entering directory '/home/vinicius/Desktop/Projeto_easy/build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_46625.dir/CheckFunctionExists.c.o
+/usr/bin/cc    -DCHECK_FUNCTION_EXISTS=png_create_read_struct   -o CMakeFiles/cmTC_46625.dir/CheckFunctionExists.c.o   -c /usr/share/cmake-3.7/Modules/CheckFunctionExists.c
+Linking C executable cmTC_46625
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_46625.dir/link.txt --verbose=1
+/usr/bin/cc   -DCHECK_FUNCTION_EXISTS=png_create_read_struct    CMakeFiles/cmTC_46625.dir/CheckFunctionExists.c.o  -o cmTC_46625 -rdynamic /usr/lib/x86_64-linux-gnu/libpng.so 
+make[1]: Leaving directory '/home/vinicius/Desktop/Projeto_easy/build/CMakeFiles/CMakeTmp'
+
+
+Determining if the function jpeg_read_header exists passed with the following output:
+Change Dir: /home/vinicius/Desktop/Projeto_easy/build/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/make" "cmTC_7657d/fast"
+/usr/bin/make -f CMakeFiles/cmTC_7657d.dir/build.make CMakeFiles/cmTC_7657d.dir/build
+make[1]: Entering directory '/home/vinicius/Desktop/Projeto_easy/build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_7657d.dir/CheckFunctionExists.c.o
+/usr/bin/cc    -DCHECK_FUNCTION_EXISTS=jpeg_read_header   -o CMakeFiles/cmTC_7657d.dir/CheckFunctionExists.c.o   -c /usr/share/cmake-3.7/Modules/CheckFunctionExists.c
+Linking C executable cmTC_7657d
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_7657d.dir/link.txt --verbose=1
+/usr/bin/cc   -DCHECK_FUNCTION_EXISTS=jpeg_read_header    CMakeFiles/cmTC_7657d.dir/CheckFunctionExists.c.o  -o cmTC_7657d -rdynamic /usr/lib/x86_64-linux-gnu/libjpeg.so 
+make[1]: Leaving directory '/home/vinicius/Desktop/Projeto_easy/build/CMakeFiles/CMakeTmp'
+
+
+Determining if the include file sys/types.h exists passed with the following output:
+Change Dir: /home/vinicius/Desktop/Projeto_easy/build/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/make" "cmTC_4f2b4/fast"
+/usr/bin/make -f CMakeFiles/cmTC_4f2b4.dir/build.make CMakeFiles/cmTC_4f2b4.dir/build
+make[1]: Entering directory '/home/vinicius/Desktop/Projeto_easy/build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_4f2b4.dir/CheckIncludeFile.c.o
+/usr/bin/cc     -o CMakeFiles/cmTC_4f2b4.dir/CheckIncludeFile.c.o   -c /home/vinicius/Desktop/Projeto_easy/build/CMakeFiles/CMakeTmp/CheckIncludeFile.c
+Linking C executable cmTC_4f2b4
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_4f2b4.dir/link.txt --verbose=1
+/usr/bin/cc       CMakeFiles/cmTC_4f2b4.dir/CheckIncludeFile.c.o  -o cmTC_4f2b4 -rdynamic 
+make[1]: Leaving directory '/home/vinicius/Desktop/Projeto_easy/build/CMakeFiles/CMakeTmp'
+
+
+Determining if the include file stdint.h exists passed with the following output:
+Change Dir: /home/vinicius/Desktop/Projeto_easy/build/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/make" "cmTC_e6425/fast"
+/usr/bin/make -f CMakeFiles/cmTC_e6425.dir/build.make CMakeFiles/cmTC_e6425.dir/build
+make[1]: Entering directory '/home/vinicius/Desktop/Projeto_easy/build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_e6425.dir/CheckIncludeFile.c.o
+/usr/bin/cc     -o CMakeFiles/cmTC_e6425.dir/CheckIncludeFile.c.o   -c /home/vinicius/Desktop/Projeto_easy/build/CMakeFiles/CMakeTmp/CheckIncludeFile.c
+Linking C executable cmTC_e6425
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_e6425.dir/link.txt --verbose=1
+/usr/bin/cc       CMakeFiles/cmTC_e6425.dir/CheckIncludeFile.c.o  -o cmTC_e6425 -rdynamic 
+make[1]: Leaving directory '/home/vinicius/Desktop/Projeto_easy/build/CMakeFiles/CMakeTmp'
+
+
+Determining if the include file stddef.h exists passed with the following output:
+Change Dir: /home/vinicius/Desktop/Projeto_easy/build/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/make" "cmTC_60f79/fast"
+/usr/bin/make -f CMakeFiles/cmTC_60f79.dir/build.make CMakeFiles/cmTC_60f79.dir/build
+make[1]: Entering directory '/home/vinicius/Desktop/Projeto_easy/build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_60f79.dir/CheckIncludeFile.c.o
+/usr/bin/cc     -o CMakeFiles/cmTC_60f79.dir/CheckIncludeFile.c.o   -c /home/vinicius/Desktop/Projeto_easy/build/CMakeFiles/CMakeTmp/CheckIncludeFile.c
+Linking C executable cmTC_60f79
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_60f79.dir/link.txt --verbose=1
+/usr/bin/cc       CMakeFiles/cmTC_60f79.dir/CheckIncludeFile.c.o  -o cmTC_60f79 -rdynamic 
+make[1]: Leaving directory '/home/vinicius/Desktop/Projeto_easy/build/CMakeFiles/CMakeTmp'
+
+
+Determining size of void* passed with the following output:
+Change Dir: /home/vinicius/Desktop/Projeto_easy/build/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/make" "cmTC_740d7/fast"
+/usr/bin/make -f CMakeFiles/cmTC_740d7.dir/build.make CMakeFiles/cmTC_740d7.dir/build
+make[1]: Entering directory '/home/vinicius/Desktop/Projeto_easy/build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_740d7.dir/SIZE_OF_VOID_PTR.c.o
+/usr/bin/cc     -o CMakeFiles/cmTC_740d7.dir/SIZE_OF_VOID_PTR.c.o   -c /home/vinicius/Desktop/Projeto_easy/build/CMakeFiles/CheckTypeSize/SIZE_OF_VOID_PTR.c
+Linking C executable cmTC_740d7
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_740d7.dir/link.txt --verbose=1
+/usr/bin/cc       CMakeFiles/cmTC_740d7.dir/SIZE_OF_VOID_PTR.c.o  -o cmTC_740d7 -rdynamic /usr/lib/x86_64-linux-gnu/libjpeg.so 
+make[1]: Leaving directory '/home/vinicius/Desktop/Projeto_easy/build/CMakeFiles/CMakeTmp'
+
+
+Determining if the function sgetrf_single exists passed with the following output:
+Change Dir: /home/vinicius/Desktop/Projeto_easy/build/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/make" "cmTC_d0224/fast"
+/usr/bin/make -f CMakeFiles/cmTC_d0224.dir/build.make CMakeFiles/cmTC_d0224.dir/build
+make[1]: Entering directory '/home/vinicius/Desktop/Projeto_easy/build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_d0224.dir/CheckFunctionExists.c.o
+/usr/bin/cc    -DCHECK_FUNCTION_EXISTS=sgetrf_single   -o CMakeFiles/cmTC_d0224.dir/CheckFunctionExists.c.o   -c /usr/share/cmake-3.7/Modules/CheckFunctionExists.c
+Linking C executable cmTC_d0224
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_d0224.dir/link.txt --verbose=1
+/usr/bin/cc   -DCHECK_FUNCTION_EXISTS=sgetrf_single    CMakeFiles/cmTC_d0224.dir/CheckFunctionExists.c.o  -o cmTC_d0224 -rdynamic /usr/lib/libopenblas.so 
+make[1]: Leaving directory '/home/vinicius/Desktop/Projeto_easy/build/CMakeFiles/CMakeTmp'
+
+
+Determining if the function cblas_ddot exists passed with the following output:
+Change Dir: /home/vinicius/Desktop/Projeto_easy/build/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/make" "cmTC_9888f/fast"
+/usr/bin/make -f CMakeFiles/cmTC_9888f.dir/build.make CMakeFiles/cmTC_9888f.dir/build
+make[1]: Entering directory '/home/vinicius/Desktop/Projeto_easy/build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_9888f.dir/CheckFunctionExists.c.o
+/usr/bin/cc    -DCHECK_FUNCTION_EXISTS=cblas_ddot   -o CMakeFiles/cmTC_9888f.dir/CheckFunctionExists.c.o   -c /usr/share/cmake-3.7/Modules/CheckFunctionExists.c
+Linking C executable cmTC_9888f
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_9888f.dir/link.txt --verbose=1
+/usr/bin/cc   -DCHECK_FUNCTION_EXISTS=cblas_ddot    CMakeFiles/cmTC_9888f.dir/CheckFunctionExists.c.o  -o cmTC_9888f -rdynamic /usr/lib/libopenblas.so 
+make[1]: Leaving directory '/home/vinicius/Desktop/Projeto_easy/build/CMakeFiles/CMakeTmp'
+
+
