@@ -1,0 +1,6 @@
+<map id="Detector::detect" name="Detector::detect">
+<area shape="rect" id="node2" href="$class_controle.html#a80556d08591e48956c2811d2c7664e37" title="Controle::captureLoop" alt="" coords="169,31,320,57"/>
+<area shape="rect" id="node3" href="$class_controle.html#aa2dccd6f4592dc6169f5fa52416ba39a" title="Controle::Controle" alt="" coords="513,5,641,32"/>
+<area shape="rect" id="node4" href="$class_controle.html#a94be17f76a39de50ba2979a2e53b109e" title="Controle::run" alt="" coords="368,56,465,83"/>
+<area shape="rect" id="node5" href="$main_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title="main" alt="" coords="552,56,603,83"/>
+</map>

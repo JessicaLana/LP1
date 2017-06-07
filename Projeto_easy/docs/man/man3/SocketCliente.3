@@ -1,0 +1,135 @@
+.TH "SocketCliente" 3 "Wed Jun 7 2017" "Controle" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+SocketCliente
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <Socket\&.h>\fP
+.PP
+Inherits \fBSocket\fP\&.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBSocketCliente\fP (std::string ip, unsigned long port)"
+.br
+.ti -1c
+.RI "void \fBconnectToServer\fP ()"
+.br
+.ti -1c
+.RI "void \fBsendData\fP (const char *data_, int size)"
+.br
+.ti -1c
+.RI "\fBSocketCliente\fP ()"
+.br
+.ti -1c
+.RI "\fB~SocketCliente\fP ()"
+.br
+.ti -1c
+.RI "int \fBgetFides\fP ()"
+.br
+.in -1c
+.SS "Private Attributes"
+
+.in +1c
+.ti -1c
+.RI "char \fBbuffer\fP [\fBBUFFERSIZE\fP]"
+.br
+.in -1c
+.SS "Additional Inherited Members"
+.SH "Detailed Description"
+.PP 
+Definition at line 23 of file Socket\&.h\&.
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "SocketCliente::SocketCliente (std::string ip, unsigned long port)"
+Initializes ip server address and port\&. Does NOT establish connection 
+.PP
+Definition at line 2 of file Socket\&.cpp\&.
+.PP
+.nf
+2                                                             {
+3     //Inicializando campos da variavel serverAddr, que será em seguida utilizada na função connect\&. Essa variavel é do tipo sockaddr_in definidio na biblioteca socket\&.h
+4     serverAddr\&.sin_family = AF_INET;
+5     serverAddr\&.sin_port = htons(port);
+6     inet_aton(ip\&.c_str(), &serverAddr\&.sin_addr);
+7     //Criando socket e atribuindo seu ID - valor inteiro - à variavel fides\&.
+8     fides = socket(AF_INET, SOCK_STREAM, 0);
+9 }
+.fi
+.SS "SocketCliente::SocketCliente ()\fC [inline]\fP"
+
+.PP
+Definition at line 30 of file Socket\&.h\&.
+.PP
+.nf
+30 {}; 
+.fi
+.SS "SocketCliente::~SocketCliente ()"
+Default constructor Closes connection 
+.PP
+Definition at line 29 of file Socket\&.cpp\&.
+.PP
+.nf
+29                              {
+30     //Finaliza conexão
+31     close(fides);
+32 }
+.fi
+.SH "Member Function Documentation"
+.PP 
+.SS "void SocketCliente::connectToServer ()"
+Establishes connection to server 
+.PP
+Definition at line 10 of file Socket\&.cpp\&.
+.PP
+.nf
+10                                    {
+11     //Estabelece conexão e trata de seu sucesso ou falha
+12     if(connect(fides, (const sockaddr*)&serverAddr, sizeof(serverAddr)) == 0){
+13         std::cout << "Connected!" << std::endl;
+14     }
+15     else 
+16         throw std::runtime_error("Failed connecting to server");
+17 }
+.fi
+.SS "int SocketCliente::getFides ()"
+
+.PP
+Definition at line 26 of file Socket\&.cpp\&.
+.PP
+.nf
+26                            {
+27     return fides;
+28 }
+.fi
+.SS "void SocketCliente::sendData (const char * data_, int size)\fC [virtual]\fP"
+Sends arbritrary data - use the sizeof operator 
+.PP
+Implements \fBSocket\fP\&.
+.PP
+Definition at line 18 of file Socket\&.cpp\&.
+.PP
+.nf
+18                                                        {
+19     //Copia dados para o buffer
+20     memcpy(buffer, data_, size);
+21     //Escreve os dados do buffer no socket
+22     write(fides, buffer, size);
+23     //Limpa o buffer
+24     memset(buffer, '\0', sizeof(buffer));
+25 }
+.fi
+.SH "Member Data Documentation"
+.PP 
+.SS "char SocketCliente::buffer[\fBBUFFERSIZE\fP]\fC [private]\fP"
+Data buffer, feel free to especify yours through the BUFFERSIZE macro 
+.PP
+Definition at line 25 of file Socket\&.h\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Controle from the source code\&.

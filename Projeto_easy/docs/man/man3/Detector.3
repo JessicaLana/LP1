@@ -1,0 +1,173 @@
+.TH "Detector" 3 "Wed Jun 7 2017" "Controle" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+Detector
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <Detector\&.h>\fP
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBDetector\fP ()"
+.br
+.ti -1c
+.RI "\fBDetector\fP (std::string path)"
+.br
+.ti -1c
+.RI "void \fBdetect\fP (cv::Mat &img)"
+.br
+.ti -1c
+.RI "uint8_t \fBgetSignal\fP ()"
+.br
+.in -1c
+.SS "Public Attributes"
+
+.in +1c
+.ti -1c
+.RI "std::string \fBfilePath\fP = std::string('/usr/share/opencv/lbpcascades/lbpcascade_frontalface\&.xml')"
+.br
+.ti -1c
+.RI "unsigned char \fBmSignal\fP"
+.br
+.ti -1c
+.RI "dlib::frontal_face_detector \fBdetector\fP"
+.br
+.ti -1c
+.RI "dlib::shape_predictor \fBpose_model\fP"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+This class takes care of detecting faces in each frame and updating its state accordingly 
+.PP
+Definition at line 19 of file Detector\&.h\&.
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "Detector::Detector ()"
+Default constructor 
+.PP
+Definition at line 39 of file Detector\&.cpp\&.
+.PP
+.nf
+39                   {
+40     detector = dlib::get_frontal_face_detector();
+41     dlib::deserialize("\&.\&./shape_predictor_68_face_landmarks\&.dat") >> pose_model;
+42 }
+.fi
+.SS "Detector::Detector (std::string path)"
+Initializes cacade path 
+.PP
+Definition at line 29 of file Detector\&.cpp\&.
+.PP
+.nf
+29                                  : filePath(path){
+30     //Initializes detector and deserializes data file in path
+31     try{
+32         detector = dlib::get_frontal_face_detector();
+33         dlib::deserialize(path\&.c_str()) >> pose_model;
+34     }
+35     catch(std::exception& e){
+36         std::cout << e\&.what() << std::endl;
+37     }
+38 }
+.fi
+.SH "Member Function Documentation"
+.PP 
+.SS "void Detector::detect (cv::Mat & img)"
+Detects faces in frame 
+.PP
+Definition at line 46 of file Detector\&.cpp\&.
+.PP
+.nf
+46                                  {
+47     //Convert Mat into an object that can be manipulated by dlib's algorithm
+48     dlib::cv_image<dlib::bgr_pixel> cimg(frame);
+49     std::vector<dlib::rectangle> faces = detector(cimg);
+50     std::vector<dlib::full_object_detection> shapes;
+51     //Fill shapes with face meshes in the current frame
+52     for(auto e : faces)
+53         shapes\&.push_back(pose_model(cimg, e));
+54     //If there are faces detected, do work
+55     if(!shapes\&.empty()){
+56        for(int i = 0; i<68 ; i++){
+57             //Show index of each point as text on the screen
+58             cv::Point p(shapes[0]\&.part(i)\&.x(), shapes[0]\&.part(i)\&.y());
+59             cv::circle( frame, p, 2, cv::Scalar(255,0,0), 2, 6, 0 );   
+60             cv::putText(frame,std::to_string(i),p+cv::Point(-5,-5), cv::FONT_HERSHEY_SIMPLEX, 0\&.2, cv::Scalar(255,0,0));   
+61         }
+62         //Get center of biggest face
+63         auto rect = shapes[0]\&.get_rect();
+64         auto tmpCenter = dlib::center(rect);
+65         //New origin, previously top left of the screen
+66         cv::Point newOrigin(tmpCenter\&.x(), tmpCenter\&.y());
+67         //Ratio for transformations
+68         double ratio = 150\&.0/rect\&.width();
+69         //Get positions of every relevant point
+70         cv::Point center = getCvPoint(shapes[0]\&.part(30));
+71         cv::Point right = getCvPoint(shapes[0]\&.part(2));
+72         cv::Point left = getCvPoint(shapes[0]\&.part(14));
+73         cv::Point bottom = getCvPoint(shapes[0]\&.part(33));
+74         cv::Point faceCenter = transform(center, newOrigin, ratio);
+75         //Finding distance from each relevant point to the center piece (point 30)
+76         double rightDistance = normalizedDistance(right, faceCenter, newOrigin, ratio);
+77         double leftDistance = normalizedDistance(left, faceCenter, newOrigin, ratio);
+78         double bottomDistance = normalizedDistance(bottom, faceCenter, newOrigin, ratio);
+79         //Show lines and distances for debugging
+80         cv::line(frame, center, right, cv::Scalar(0,0,255));
+81         cv::putText(frame,std::to_string((int)rightDistance), right - cv::Point(10,5), cv::FONT_HERSHEY_SIMPLEX, 0\&.35, cv::Scalar(0,0,255));   
+82         cv::line(frame, center, left, cv::Scalar(0,0,255));
+83         cv::putText(frame,std::to_string((int)leftDistance),left + cv::Point(5,5), cv::FONT_HERSHEY_SIMPLEX, 0\&.35, cv::Scalar(0,0,255));   
+84         cv::line(frame, center, bottom, cv::Scalar(0,0,255));
+85         cv::putText(frame,std::to_string((int)bottomDistance),bottom + cv::Point(5,15), cv::FONT_HERSHEY_SIMPLEX, 0\&.35, cv::Scalar(0,0,255));   
+86         //Update signal accordingly
+87         if(rightDistance <= 50)
+88             mSignal = NEXTCANAL;
+89         else if(leftDistance <= 50)
+90             mSignal = PREVCANAL;
+91         else if(bottomDistance <= 10)
+92             mSignal = MENOSVOLUME;
+93         else if(bottomDistance > 18)
+94             mSignal = MAISVOLUME;
+95         else 
+96             mSignal = 0;
+97         
+98     }
+99 
+100 }
+.fi
+.SS "uint8_t Detector::getSignal ()"
+Returns signal 
+.PP
+Definition at line 43 of file Detector\&.cpp\&.
+.PP
+.nf
+43                            {
+44     return mSignal;
+45 }
+.fi
+.SH "Member Data Documentation"
+.PP 
+.SS "dlib::frontal_face_detector Detector::detector"
+Dlib's face detection algorithm 
+.PP
+Definition at line 23 of file Detector\&.h\&.
+.SS "std::string Detector::filePath = std::string('/usr/share/opencv/lbpcascades/lbpcascade_frontalface\&.xml')"
+Landmark feature detector path 
+.PP
+Definition at line 21 of file Detector\&.h\&.
+.SS "unsigned char Detector::mSignal"
+Signal to be sent through socket 
+.PP
+Definition at line 22 of file Detector\&.h\&.
+.SS "dlib::shape_predictor Detector::pose_model"
+Landmark detector pose-model (68 points mesh) 
+.PP
+Definition at line 24 of file Detector\&.h\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Controle from the source code\&.

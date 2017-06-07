@@ -1,0 +1,13 @@
+<map id="main" name="main">
+<area shape="rect" id="node2" href="$class_controle.html#a94be17f76a39de50ba2979a2e53b109e" title="Controle::run" alt="" coords="104,161,201,188"/>
+<area shape="rect" id="node3" href="$class_controle.html#a80556d08591e48956c2811d2c7664e37" title="Controle::captureLoop" alt="" coords="258,107,409,133"/>
+<area shape="rect" id="node10" href="$class_controle.html#a4bede01b9018cab4780db162d1fa50dd" title="Controle::connect" alt="" coords="271,161,396,188"/>
+<area shape="rect" id="node12" href="$class_socket_cliente.html#a3826f36335fd086daca4642b37c20e6e" title="SocketCliente::sendData" alt="" coords="249,212,417,239"/>
+<area shape="rect" id="node4" href="$class_detector.html#a585127adf02709b23974f61c61ca4de1" title="Detector::detect" alt="" coords="494,56,610,83"/>
+<area shape="rect" id="node9" href="$class_detector.html#a61e144c9aedc6a7fbcd93cac407c4d98" title="Detector::getSignal" alt="" coords="485,107,619,133"/>
+<area shape="rect" id="node5" href="$_detector_8cpp.html#ab6b06a725b25b4c97c2437a330c576ea" title="getCvPoint" alt="" coords="712,5,799,32"/>
+<area shape="rect" id="node6" href="$_detector_8cpp.html#a97a7f824536f404caa7ead67a5371305" title="transform" alt="" coords="872,56,949,83"/>
+<area shape="rect" id="node7" href="$_detector_8cpp.html#a119e1fc1f366a4b720cc9729608ed3bc" title="normalizedDistance" alt="" coords="687,107,824,133"/>
+<area shape="rect" id="node8" href="$_detector_8cpp.html#a79537b048dbd1693d629c13354ce710c" title="modulus" alt="" coords="875,107,946,133"/>
+<area shape="rect" id="node11" href="$class_socket_cliente.html#a0ccbb88684504a693d639f6bb8737eda" title="SocketCliente::connectTo\lServer" alt="" coords="465,158,639,199"/>
+</map>

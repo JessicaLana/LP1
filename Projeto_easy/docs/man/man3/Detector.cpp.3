@@ -1,0 +1,90 @@
+.TH "Desktop/Projeto_easy/src/Detector.cpp" 3 "Wed Jun 7 2017" "Controle" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+Desktop/Projeto_easy/src/Detector.cpp
+.SH SYNOPSIS
+.br
+.PP
+\fC#include '\&.\&./include/Detector\&.h'\fP
+.br
+
+.SS "Functions"
+
+.in +1c
+.ti -1c
+.RI "cv::Point \fBtransform\fP (cv::Point &oldPoint, cv::Point &newOrigin, double ratio)"
+.br
+.ti -1c
+.RI "double \fBmodulus\fP (cv::Point &point)"
+.br
+.ti -1c
+.RI "double \fBnormalizedDistance\fP (cv::Point &oldVector, cv::Point faceCenter, cv::Point &newOrigin, double ratio)"
+.br
+.ti -1c
+.RI "cv::Point \fBgetCvPoint\fP (dlib::point &p)"
+.br
+.ti -1c
+.RI "dlib::point \fBgetDlibPoint\fP (cv::Point &p)"
+.br
+.in -1c
+.SH "Function Documentation"
+.PP 
+.SS "cv::Point getCvPoint (dlib::point & p)\fC [inline]\fP"
+
+.PP
+Definition at line 19 of file Detector\&.cpp\&.
+.PP
+.nf
+19                                        {
+20     cv::Point tmp(p\&.x(),p\&.y());
+21     return tmp;
+22 }
+.fi
+.SS "dlib::point getDlibPoint (cv::Point & p)\fC [inline]\fP"
+
+.PP
+Definition at line 24 of file Detector\&.cpp\&.
+.PP
+.nf
+24                                          {
+25     dlib::point point(p\&.x, p\&.y);
+26     return point;
+27 }
+.fi
+.SS "double modulus (cv::Point & point)\fC [inline]\fP"
+
+.PP
+Definition at line 9 of file Detector\&.cpp\&.
+.PP
+.nf
+9                                      {
+10     double m = std::sqrt(point\&.x*point\&.x + point\&.y*point\&.y);
+11     return m;
+12 }
+.fi
+.SS "double normalizedDistance (cv::Point & oldVector, cv::Point faceCenter, cv::Point & newOrigin, double ratio)\fC [inline]\fP"
+
+.PP
+Definition at line 14 of file Detector\&.cpp\&.
+.PP
+.nf
+14                                                                                                          {
+15     cv::Point tmp = transform(oldVector, newOrigin, ratio) - faceCenter;
+16     return modulus(tmp);
+17 }
+.fi
+.SS "cv::Point transform (cv::Point & oldPoint, cv::Point & newOrigin, double ratio)\fC [inline]\fP"
+
+.PP
+Definition at line 4 of file Detector\&.cpp\&.
+.PP
+.nf
+4                                                                              {
+5     cv::Point result(ratio*(oldPoint\&.x - newOrigin\&.x), ratio*(oldPoint\&.y - newOrigin\&.y));
+6     return result;
+7 }
+.fi
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Controle from the source code\&.

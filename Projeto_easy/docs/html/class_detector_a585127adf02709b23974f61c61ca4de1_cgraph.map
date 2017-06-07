@@ -1,0 +1,6 @@
+<map id="Detector::detect" name="Detector::detect">
+<area shape="rect" id="node2" href="$_detector_8cpp.html#ab6b06a725b25b4c97c2437a330c576ea" title="getCvPoint" alt="" coords="195,5,281,32"/>
+<area shape="rect" id="node3" href="$_detector_8cpp.html#a97a7f824536f404caa7ead67a5371305" title="transform" alt="" coords="355,56,432,83"/>
+<area shape="rect" id="node4" href="$_detector_8cpp.html#a119e1fc1f366a4b720cc9729608ed3bc" title="normalizedDistance" alt="" coords="169,107,307,133"/>
+<area shape="rect" id="node5" href="$_detector_8cpp.html#a79537b048dbd1693d629c13354ce710c" title="modulus" alt="" coords="358,107,429,133"/>
+</map>

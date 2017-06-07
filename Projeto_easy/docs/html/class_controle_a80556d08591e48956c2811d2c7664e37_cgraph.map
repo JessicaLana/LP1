@@ -1,0 +1,8 @@
+<map id="Controle::captureLoop" name="Controle::captureLoop">
+<area shape="rect" id="node2" href="$class_detector.html#a585127adf02709b23974f61c61ca4de1" title="Detector::detect" alt="" coords="213,56,329,83"/>
+<area shape="rect" id="node7" href="$class_detector.html#a61e144c9aedc6a7fbcd93cac407c4d98" title="Detector::getSignal" alt="" coords="204,107,339,133"/>
+<area shape="rect" id="node3" href="$_detector_8cpp.html#ab6b06a725b25b4c97c2437a330c576ea" title="getCvPoint" alt="" coords="412,5,499,32"/>
+<area shape="rect" id="node4" href="$_detector_8cpp.html#a97a7f824536f404caa7ead67a5371305" title="transform" alt="" coords="572,56,649,83"/>
+<area shape="rect" id="node5" href="$_detector_8cpp.html#a119e1fc1f366a4b720cc9729608ed3bc" title="normalizedDistance" alt="" coords="387,107,524,133"/>
+<area shape="rect" id="node6" href="$_detector_8cpp.html#a79537b048dbd1693d629c13354ce710c" title="modulus" alt="" coords="575,107,646,133"/>
+</map>

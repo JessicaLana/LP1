@@ -1,0 +1,75 @@
+.TH "Socket" 3 "Wed Jun 7 2017" "Controle" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+Socket
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <Socket\&.h>\fP
+.PP
+Inherited by \fBSocketCliente\fP\&.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "virtual void \fBsendData\fP (const char *data_, int size)=0"
+.br
+.in -1c
+.SS "Protected Attributes"
+
+.in +1c
+.ti -1c
+.RI "int \fBdomain\fP = AF_INET"
+.br
+.ti -1c
+.RI "int \fBtype\fP = SOCK_STREAM"
+.br
+.ti -1c
+.RI "int \fBprotocol\fP = 0"
+.br
+.ti -1c
+.RI "sockaddr_in \fBserverAddr\fP"
+.br
+.ti -1c
+.RI "int \fBfides\fP"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+This class is a simple c++ wrapper on linux C sockets, it uses AF_INET as protocol and can have it's buffer size set through the BUFFERSIZE macro 
+.PP
+Definition at line 13 of file Socket\&.h\&.
+.SH "Member Function Documentation"
+.PP 
+.SS "virtual void Socket::sendData (const char * data_, int size)\fC [pure virtual]\fP"
+
+.PP
+Implemented in \fBSocketCliente\fP\&.
+.SH "Member Data Documentation"
+.PP 
+.SS "int Socket::domain = AF_INET\fC [protected]\fP"
+\fBSocket\fP domain, please refer to the linux manuals for more info on other possible socket domains 
+.PP
+Definition at line 15 of file Socket\&.h\&.
+.SS "int Socket::fides\fC [protected]\fP"
+\fBSocket\fP file descriptor writes are made into 
+.PP
+Definition at line 19 of file Socket\&.h\&.
+.SS "int Socket::protocol = 0\fC [protected]\fP"
+Set to 0 if not using alternative protocol for the given socket type 
+.PP
+Definition at line 17 of file Socket\&.h\&.
+.SS "sockaddr_in Socket::serverAddr\fC [protected]\fP"
+Structure holding the target server address 
+.PP
+Definition at line 18 of file Socket\&.h\&.
+.SS "int Socket::type = SOCK_STREAM\fC [protected]\fP"
+\fBSocket\fP type - TCP packet stream -, please refer to the linux manuals for more info on other possible socket types 
+.PP
+Definition at line 16 of file Socket\&.h\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Controle from the source code\&.

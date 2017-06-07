@@ -1,11 +1,13 @@
-import socket 
 import sys
+import socket
+import atexit
 s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
-s.bind(('',12345))
+s.bind(('',85))
 s.listen(10)
 while 1:
-    (conn, addr) = s.accept()
+    (csocket, address) = s.accept()
     while 1:
-        print conn.recv(1)
+        data =  csocket.recv(1)
+        print data
     
-s.close()
+    s.close()

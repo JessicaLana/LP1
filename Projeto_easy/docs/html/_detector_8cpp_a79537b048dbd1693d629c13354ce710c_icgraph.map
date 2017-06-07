@@ -1,0 +1,8 @@
+<map id="modulus" name="modulus">
+<area shape="rect" id="node2" href="$_detector_8cpp.html#a119e1fc1f366a4b720cc9729608ed3bc" title="normalizedDistance" alt="" coords="124,31,261,57"/>
+<area shape="rect" id="node3" href="$class_detector.html#a585127adf02709b23974f61c61ca4de1" title="Detector::detect" alt="" coords="309,31,425,57"/>
+<area shape="rect" id="node4" href="$class_controle.html#a80556d08591e48956c2811d2c7664e37" title="Controle::captureLoop" alt="" coords="473,31,624,57"/>
+<area shape="rect" id="node5" href="$class_controle.html#aa2dccd6f4592dc6169f5fa52416ba39a" title="Controle::Controle" alt="" coords="817,5,945,32"/>
+<area shape="rect" id="node6" href="$class_controle.html#a94be17f76a39de50ba2979a2e53b109e" title="Controle::run" alt="" coords="672,56,769,83"/>
+<area shape="rect" id="node7" href="$main_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title="main" alt="" coords="856,56,907,83"/>
+</map>

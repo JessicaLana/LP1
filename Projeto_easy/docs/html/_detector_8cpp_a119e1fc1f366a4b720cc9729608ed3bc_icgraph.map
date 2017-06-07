@@ -1,0 +1,7 @@
+<map id="normalizedDistance" name="normalizedDistance">
+<area shape="rect" id="node2" href="$class_detector.html#a585127adf02709b23974f61c61ca4de1" title="Detector::detect" alt="" coords="191,31,307,57"/>
+<area shape="rect" id="node3" href="$class_controle.html#a80556d08591e48956c2811d2c7664e37" title="Controle::captureLoop" alt="" coords="355,31,505,57"/>
+<area shape="rect" id="node4" href="$class_controle.html#aa2dccd6f4592dc6169f5fa52416ba39a" title="Controle::Controle" alt="" coords="699,5,827,32"/>
+<area shape="rect" id="node5" href="$class_controle.html#a94be17f76a39de50ba2979a2e53b109e" title="Controle::run" alt="" coords="553,56,651,83"/>
+<area shape="rect" id="node6" href="$main_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title="main" alt="" coords="737,56,788,83"/>
+</map>

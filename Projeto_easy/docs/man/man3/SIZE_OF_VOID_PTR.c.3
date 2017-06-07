@@ -1,0 +1,80 @@
+.TH "Desktop/Projeto_easy/build/CMakeFiles/CheckTypeSize/SIZE_OF_VOID_PTR.c" 3 "Wed Jun 7 2017" "Controle" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+Desktop/Projeto_easy/build/CMakeFiles/CheckTypeSize/SIZE_OF_VOID_PTR.c
+.SH SYNOPSIS
+.br
+.PP
+\fC#include <sys/types\&.h>\fP
+.br
+\fC#include <stdint\&.h>\fP
+.br
+\fC#include <stddef\&.h>\fP
+.br
+
+.SS "Macros"
+
+.in +1c
+.ti -1c
+.RI "#define \fBSIZE\fP   (sizeof(void*))"
+.br
+.in -1c
+.SS "Functions"
+
+.in +1c
+.ti -1c
+.RI "int \fBmain\fP (int argc, char *argv[])"
+.br
+.in -1c
+.SS "Variables"
+
+.in +1c
+.ti -1c
+.RI "char \fBinfo_size\fP []"
+.br
+.in -1c
+.SH "Macro Definition Documentation"
+.PP 
+.SS "#define SIZE   (sizeof(void*))"
+
+.PP
+Definition at line 17 of file SIZE_OF_VOID_PTR\&.c\&.
+.SH "Function Documentation"
+.PP 
+.SS "int main (int argc, char * argv[])"
+
+.PP
+Definition at line 33 of file SIZE_OF_VOID_PTR\&.c\&.
+.PP
+.nf
+35 {
+36   int require = 0;
+37   require += info_size[argc];
+38   (void)argv;
+39   return require;
+40 }
+.fi
+.SH "Variable Documentation"
+.PP 
+.SS "char info_size[]"
+\fBInitial value:\fP
+.PP
+.nf
+=  {'I', 'N', 'F', 'O', ':', 's','i','z','e','[',
+  ('0' + ((SIZE / 10000)%10)),
+  ('0' + ((SIZE / 1000)%10)),
+  ('0' + ((SIZE / 100)%10)),
+  ('0' + ((SIZE / 10)%10)),
+  ('0' +  (SIZE    % 10)),
+  ']',
+
+
+
+  '\0'}
+.fi
+.PP
+Definition at line 18 of file SIZE_OF_VOID_PTR\&.c\&.
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Controle from the source code\&.

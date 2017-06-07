@@ -1,0 +1,5 @@
+<map id="Controle" name="Controle">
+<area shape="rect" id="node2" href="$class_detector.html" title="Detector" alt="" coords="5,81,77,108"/>
+<area shape="rect" id="node3" href="$class_socket_cliente.html" title="SocketCliente" alt="" coords="101,81,205,108"/>
+<area shape="rect" id="node4" href="$class_socket.html" title="Socket" alt="" coords="122,5,185,32"/>
+</map>
